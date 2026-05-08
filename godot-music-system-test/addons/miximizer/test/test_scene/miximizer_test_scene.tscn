@@ -1,0 +1,309 @@
+[gd_scene format=3 uid="uid://c6xlvmifoev83"]
+
+[ext_resource type="Script" uid="uid://1tj83irngfno" path="res://addons/miximizer/test/test_scene/miximizer_test_scene.gd" id="1_4036s"]
+[ext_resource type="Resource" uid="uid://m1ooqhsy5uot" path="res://test_bgm_data.tres" id="2_c361x"]
+[ext_resource type="PackedScene" uid="uid://cjgrlb2ol7fsi" path="res://addons/miximizer/test/beat_grid_progress_visualizer/beat_grid_progress_visualizer.tscn" id="3_b3nm2"]
+[ext_resource type="Script" uid="uid://f58ysd02ci1m" path="res://addons/miximizer/utility/audio_spectrum_display.gd" id="4_084m6"]
+[ext_resource type="Script" uid="uid://bi4f0b1b6gpxt" path="res://addons/miximizer/test/metronome.gd" id="5_s2v8r"]
+[ext_resource type="AudioStream" uid="uid://df68vdf26huup" path="res://assets/audio/sfx/sfx_metronome-beat.wav" id="6_lhisy"]
+[ext_resource type="AudioStream" uid="uid://c1yyjig6xbf4t" path="res://assets/audio/sfx/sfx_metronome-bar.wav" id="7_aohkg"]
+
+[node name="MiximizerTest" type="Control" unique_id=1591521264]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4036s")
+bgm_data = ExtResource("2_c361x")
+metadata/_edit_lock_ = true
+
+[node name="VBox" type="VBoxContainer" parent="." unique_id=699554836]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 24.0
+offset_top = 24.0
+offset_right = -24.0
+offset_bottom = -24.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_lock_ = true
+
+[node name="Header" type="MarginContainer" parent="VBox" unique_id=751482586]
+layout_mode = 2
+theme_override_constants/margin_bottom = 8
+metadata/_edit_lock_ = true
+
+[node name="Label" type="Label" parent="VBox/Header" unique_id=141873647]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "My Music System Test"
+
+[node name="-" type="HSeparator" parent="VBox" unique_id=630440767]
+layout_mode = 2
+
+[node name="LabelAudioStreamPlayer" type="Label" parent="VBox" unique_id=1939363677]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "- Audio Stream Player"
+
+[node name="AudioStreamPlayer" type="MarginContainer" parent="VBox" unique_id=2078728219]
+layout_mode = 2
+theme_override_constants/margin_left = 32
+metadata/_edit_lock_ = true
+
+[node name="GridContainer" type="GridContainer" parent="VBox/AudioStreamPlayer" unique_id=1662507156]
+layout_mode = 2
+theme_override_constants/h_separation = 12
+columns = 2
+
+[node name="LabelPlaybackPos" type="Label" parent="VBox/AudioStreamPlayer/GridContainer" unique_id=1561784370]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = ".get_playback_position():"
+
+[node name="ValuePlaybackPos" type="Label" parent="VBox/AudioStreamPlayer/GridContainer" unique_id=389508502]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "0.0000s"
+
+[node name="LabelPlaying" type="Label" parent="VBox/AudioStreamPlayer/GridContainer" unique_id=2078920358]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = ".playing:"
+
+[node name="ValuePlaying" type="Label" parent="VBox/AudioStreamPlayer/GridContainer" unique_id=1253105472]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "false"
+
+[node name="LabelPaused" type="Label" parent="VBox/AudioStreamPlayer/GridContainer" unique_id=833662371]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = ".stream_paused:"
+
+[node name="ValuePaused" type="Label" parent="VBox/AudioStreamPlayer/GridContainer" unique_id=176089855]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "false"
+
+[node name="LabelBus" type="Label" parent="VBox/AudioStreamPlayer/GridContainer" unique_id=512737402]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = ".bus:"
+
+[node name="ValueBus" type="Label" parent="VBox/AudioStreamPlayer/GridContainer" unique_id=1082901309]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "Master"
+
+[node name="LabelPlaybackType" type="Label" parent="VBox/AudioStreamPlayer/GridContainer" unique_id=137243855]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = ".playback_type:"
+
+[node name="ValuePlaybackType" type="Label" parent="VBox/AudioStreamPlayer/GridContainer" unique_id=215612941]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "0"
+
+[node name="--" type="HSeparator" parent="VBox" unique_id=1084788547]
+layout_mode = 2
+
+[node name="LabelAudioServer" type="Label" parent="VBox" unique_id=406371962]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "- Audio Server"
+
+[node name="AudioServer" type="MarginContainer" parent="VBox" unique_id=257664342]
+layout_mode = 2
+theme_override_constants/margin_left = 32
+metadata/_edit_lock_ = true
+
+[node name="GridContainer" type="GridContainer" parent="VBox/AudioServer" unique_id=1092885769]
+layout_mode = 2
+theme_override_constants/h_separation = 12
+columns = 2
+metadata/_edit_lock_ = true
+
+[node name="LabelTimeSinceLastMix" type="Label" parent="VBox/AudioServer/GridContainer" unique_id=212990501]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = ".get_time_since_last_mix():"
+
+[node name="ValueTimeSinceLastMix" type="Label" parent="VBox/AudioServer/GridContainer" unique_id=1055628816]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "0.0000 s"
+
+[node name="LabelOutputLatency" type="Label" parent="VBox/AudioServer/GridContainer" unique_id=934921708]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = ".get_output_latency():"
+
+[node name="ValueOutputLatency" type="Label" parent="VBox/AudioServer/GridContainer" unique_id=1039894662]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "0 ms"
+
+[node name="---" type="HSeparator" parent="VBox" unique_id=1500640866]
+layout_mode = 2
+
+[node name="LabelMySystem" type="Label" parent="VBox" unique_id=1897672326]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "- My System (Miximizer)"
+
+[node name="MySystem" type="MarginContainer" parent="VBox" unique_id=1231036563]
+layout_mode = 2
+theme_override_constants/margin_left = 32
+metadata/_edit_lock_ = true
+
+[node name="GridContainer" type="GridContainer" parent="VBox/MySystem" unique_id=2079264628]
+layout_mode = 2
+theme_override_constants/h_separation = 12
+columns = 2
+metadata/_edit_lock_ = true
+
+[node name="LabelPlayState" type="Label" parent="VBox/MySystem/GridContainer" unique_id=266855232]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = ".play_state:"
+
+[node name="ValuePlayState" type="Label" parent="VBox/MySystem/GridContainer" unique_id=144475777]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "STOP"
+
+[node name="LabelBpm" type="Label" parent="VBox/MySystem/GridContainer" unique_id=204998944]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = ".current_bpm:"
+
+[node name="ValueBpm" type="Label" parent="VBox/MySystem/GridContainer" unique_id=1089710882]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "120 bpm"
+
+[node name="LabelTimeSignature" type="Label" parent="VBox/MySystem/GridContainer" unique_id=1804276933]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = ".current_time_signature:"
+
+[node name="ValueTimeSignature" type="Label" parent="VBox/MySystem/GridContainer" unique_id=2110592059]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "4 / 4"
+
+[node name="LabelCurrentTime" type="Label" parent="VBox/MySystem/GridContainer" unique_id=328394966]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = ".get_current_time_sec():"
+
+[node name="ValueCurrentTime" type="Label" parent="VBox/MySystem/GridContainer" unique_id=1920041870]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "0.0000 s"
+
+[node name="LabelCurrentTiming" type="Label" parent="VBox/MySystem/GridContainer" unique_id=714620863]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = ".get_current_timing():"
+
+[node name="ValueCurrentTiming" type="Label" parent="VBox/MySystem/GridContainer" unique_id=2129158638]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "0 ms"
+
+[node name="VBox2" type="VBoxContainer" parent="." unique_id=134819480]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -416.0
+offset_top = -176.0
+offset_right = -16.0
+offset_bottom = -13.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_constants/separation = 8
+metadata/_edit_lock_ = true
+
+[node name="TimingSource" type="VBoxContainer" parent="VBox2" unique_id=488394924]
+layout_mode = 2
+size_flags_horizontal = 8
+metadata/_edit_lock_ = true
+
+[node name="Labels" type="HBoxContainer" parent="VBox2/TimingSource" unique_id=276501464]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_constants/separation = 12
+metadata/_edit_lock_ = true
+
+[node name="LabelTimingSource" type="Label" parent="VBox2/TimingSource/Labels" unique_id=672097104]
+layout_mode = 2
+text = "active_timing_source:"
+
+[node name="ValueTimingSource" type="Label" parent="VBox2/TimingSource/Labels" unique_id=1935291114]
+layout_mode = 2
+text = "AUTO"
+
+[node name="Buttons" type="HBoxContainer" parent="VBox2/TimingSource" unique_id=2108154991]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_constants/separation = 12
+metadata/_edit_lock_ = true
+
+[node name="ButtonChangeAudioPlayerMode" type="Button" parent="VBox2/TimingSource/Buttons" unique_id=931730745]
+layout_mode = 2
+text = "Audio Player Mode"
+
+[node name="ButtonChangeRealClockMode" type="Button" parent="VBox2/TimingSource/Buttons" unique_id=1007413066]
+layout_mode = 2
+text = "Real Clock Mode"
+
+[node name="BeatProgressVisualizer" parent="VBox2" unique_id=817939933 instance=ExtResource("3_b3nm2")]
+layout_mode = 2
+
+[node name="ControlButtons" type="HBoxContainer" parent="VBox2" unique_id=846981266]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_constants/separation = 8
+
+[node name="AudioSpectrumDisplay2" type="Control" parent="VBox2/ControlButtons" unique_id=931204501]
+custom_minimum_size = Vector2(100, 28)
+layout_mode = 2
+size_flags_vertical = 4
+script = ExtResource("4_084m6")
+vu_count = 12
+spacing = 1.0
+metadata/_custom_type_script = "uid://f58ysd02ci1m"
+
+[node name="PlayButton" type="Button" parent="VBox2/ControlButtons" unique_id=64721566]
+layout_mode = 2
+text = "Play"
+
+[node name="PauseButton" type="Button" parent="VBox2/ControlButtons" unique_id=1712171867]
+layout_mode = 2
+text = "Pause/Resume"
+
+[node name="StopButton" type="Button" parent="VBox2/ControlButtons" unique_id=921907069]
+layout_mode = 2
+text = "Stop"
+
+[node name="Metronome" type="AudioStreamPlayer" parent="." unique_id=2106846565]
+bus = &"SFX"
+script = ExtResource("5_s2v8r")
+bar_sound = ExtResource("7_aohkg")
+beat_sound = ExtResource("6_lhisy")
+
+[connection signal="button_down" from="VBox2/TimingSource/Buttons/ButtonChangeAudioPlayerMode" to="." method="_on_button_change_audio_player_mode_button_down"]
+[connection signal="button_down" from="VBox2/TimingSource/Buttons/ButtonChangeRealClockMode" to="." method="_on_button_change_real_clock_mode_button_down"]
+[connection signal="button_down" from="VBox2/ControlButtons/PlayButton" to="." method="_on_play_button_button_down"]
+[connection signal="button_down" from="VBox2/ControlButtons/PauseButton" to="." method="_on_pause_button_button_down"]
+[connection signal="button_down" from="VBox2/ControlButtons/StopButton" to="." method="_on_stop_button_button_down"]

@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="BGMData" format=3 uid="uid://m1ooqhsy5uot"]
+
+[ext_resource type="Script" uid="uid://cyek8mnsljybn" path="res://addons/miximizer/resource/bgm_data.gd" id="1_1hgr1"]
+[ext_resource type="AudioStream" uid="uid://bnkm6h5uafoi4" path="res://assets/audio/bgm/bgm_oh_my_sensation!.ogg" id="1_wu1ya"]
+[ext_resource type="Script" uid="uid://bhfac8wxl4ryf" path="res://addons/miximizer/timing/time_signature.gd" id="3_j7lcb"]
+
+[sub_resource type="Resource" id="Resource_q2l58"]
+script = ExtResource("3_j7lcb")
+metadata/_custom_type_script = "uid://bhfac8wxl4ryf"
+
+[resource]
+script = ExtResource("1_1hgr1")
+bgm_stream = ExtResource("1_wu1ya")
+bpm = 150.0
+time_signature = SubResource("Resource_q2l58")
+metadata/_custom_type_script = "uid://cyek8mnsljybn"

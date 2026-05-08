@@ -1,0 +1,220 @@
+[gd_scene format=3 uid="uid://cjgrlb2ol7fsi"]
+
+[ext_resource type="Script" uid="uid://bmnif37k04kh0" path="res://addons/miximizer/test/beat_grid_progress_visualizer/beat_grid_progress_visualizer.gd" id="1_kqmof"]
+
+[node name="BeatGridProgressVisualizer" type="VBoxContainer" unique_id=817939933]
+offset_right = 400.0
+offset_bottom = 128.0
+script = ExtResource("1_kqmof")
+metadata/_edit_lock_ = true
+
+[node name="LabelTitle" type="Label" parent="." unique_id=141426899]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_font_sizes/font_size = 16
+text = ".get_current_beat_grid_progress():"
+
+[node name="Progress" type="GridContainer" parent="." unique_id=1481567249]
+layout_mode = 2
+theme_override_constants/h_separation = 12
+columns = 3
+
+[node name="LabelBar" type="Label" parent="Progress" unique_id=1588165918]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "Bar:"
+horizontal_alignment = 2
+
+[node name="BarIndicator" type="ColorRect" parent="Progress" unique_id=2027959188]
+custom_minimum_size = Vector2(12, 12)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+color = Color(0, 1, 1, 1)
+
+[node name="ProgressBar" type="ProgressBar" parent="Progress" unique_id=1144239525]
+custom_minimum_size = Vector2(0, 14)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.001
+show_percentage = false
+
+[node name="ValueLabel" type="Label" parent="Progress/ProgressBar" unique_id=789946535]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 12
+text = "0.00"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LabelHalfBar" type="Label" parent="Progress" unique_id=1850004960]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "HalfBar:"
+horizontal_alignment = 2
+
+[node name="HalfBarIndicator" type="ColorRect" parent="Progress" unique_id=575232547]
+custom_minimum_size = Vector2(12, 12)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+color = Color(0, 1, 0.6833334, 1)
+
+[node name="ProgressHalfBar" type="ProgressBar" parent="Progress" unique_id=1871127492]
+custom_minimum_size = Vector2(0, 14)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.001
+show_percentage = false
+
+[node name="ValueLabel" type="Label" parent="Progress/ProgressHalfBar" unique_id=728271748]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 12
+text = "0.00"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LabelBeat" type="Label" parent="Progress" unique_id=1293010066]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "Beat:"
+horizontal_alignment = 2
+
+[node name="BeatIndicator" type="ColorRect" parent="Progress" unique_id=1832709109]
+custom_minimum_size = Vector2(12, 12)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+color = Color(0, 1, 0.48333335, 1)
+
+[node name="ProgressBeat" type="ProgressBar" parent="Progress" unique_id=479568243]
+custom_minimum_size = Vector2(0, 14)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.001
+show_percentage = false
+
+[node name="ValueLabel" type="Label" parent="Progress/ProgressBeat" unique_id=337733131]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 12
+text = "0.00"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LabelHalfBeat" type="Label" parent="Progress" unique_id=320191456]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "HalfBeat:"
+horizontal_alignment = 2
+
+[node name="HalfBeatIndicator" type="ColorRect" parent="Progress" unique_id=1458865574]
+custom_minimum_size = Vector2(12, 12)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+color = Color(0.6, 1, 0, 1)
+
+[node name="ProgressHalfBeat" type="ProgressBar" parent="Progress" unique_id=808538126]
+custom_minimum_size = Vector2(0, 14)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.001
+show_percentage = false
+
+[node name="ValueLabel" type="Label" parent="Progress/ProgressHalfBeat" unique_id=1706300932]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 12
+text = "0.00"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LabelUnit" type="Label" parent="Progress" unique_id=87849092]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "Unit:"
+horizontal_alignment = 2
+
+[node name="UnitIndicator" type="ColorRect" parent="Progress" unique_id=1695010961]
+custom_minimum_size = Vector2(12, 12)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+color = Color(1, 0.9166666, 0, 1)
+
+[node name="ProgressUnit" type="ProgressBar" parent="Progress" unique_id=1908067190]
+custom_minimum_size = Vector2(0, 14)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.001
+show_percentage = false
+
+[node name="ValueLabel" type="Label" parent="Progress/ProgressUnit" unique_id=70586020]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 12
+text = "0.00"
+horizontal_alignment = 1
+vertical_alignment = 1
