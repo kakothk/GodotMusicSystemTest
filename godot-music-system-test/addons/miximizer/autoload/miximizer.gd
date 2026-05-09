@@ -46,7 +46,7 @@ signal unit_synced
 		master_volume = clampf(value, 0.0, 1.0)
 		_apply_volume()
 ## 再生位置の計算ソース
-@export var timing_source: TimingSource = TimingSource.AUTO:
+@export var timing_source: TimingSource = TimingSource.AUDIO_PLAYER:
 	set(value):
 		timing_source = value
 		_resolve_active_timing_source()
